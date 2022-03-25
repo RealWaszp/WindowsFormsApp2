@@ -1,0 +1,31 @@
+﻿ Degrees.counter = Convert.ToInt32(textBox8.Text);
+            InitialVel.counter = Convert.ToInt32(textBox7.Text);
+
+            Displacement.counter = Convert.ToInt32(Math.Pow(InitialVel.counter, 2) * Math.Sin(2 * Degrees.counter) / Acceleration.counter);
+            Time.counter = Convert.ToInt32(2 * (InitialVel.counter * Math.Sin(Degrees.counter)) / Acceleration.counter);
+            HeightProj.counter = Convert.ToInt32(Math.Pow((InitialVel.counter * Math.Sin(Degrees.counter)), 2) / 2 * Acceleration.counter);
+
+
+Point[] points = {
+            new Point(60, 60),
+            new Point(150, 80),
+            new Point(200, 40),
+            new Point(180, 120),
+            new Point(120, 100),
+            new Point(80, 160)};
+
+            Pen pen = new Pen(Color.FromArgb(255, 0, 0, 255));
+            u.Graphics.DrawCurve(pen, points);
+
+
+
+Point start = new Point(100, 100);
+            Point control1 = new Point(200, 10);
+            Point control2 = new Point(350, 50);
+            Point end = new Point(500, 100);
+
+            Pen rpen = new Pen(Color.Red, 3);
+            u.Graphics.DrawBezier(rpen, start, control1, control2, end);
+
+
+364, 104
